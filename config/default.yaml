@@ -1,0 +1,40 @@
+# Speech-to-Text Application Configuration
+# Default settings - can be overridden by user.yaml
+
+app:
+  file_log_level: "debug"  # debug, info, warning, error
+  console_log_level: "info"  # debug, info, warning, error
+
+hotkeys:
+  start_recording: "f7"  # f7, ctrl+shift+m, ...
+  stop_recording: "f8"   # f8, ctrl+shift+n, ...
+  exit_app: "f9"         # none, f9, ctrl+shift+q, ...
+
+audio:
+  rate: 16000
+  channels: 1
+  dtype: "int16"
+  chunk: 1600  # rate / 10
+
+speech:
+  language_code: "ru-RU"  # ru-RU, en-US, uk-UA
+  alternative_language_codes: ["en-US"]
+  model: "default"  # latest_long, latest_short, command_and_search, phone_call, video, default, medical_conversation, medical_dictation
+  enable_automatic_punctuation: true
+  use_enhanced: true
+  accuracy_threshold: 0.7  # 0.0 - 1.0 threshold for typing interim phrases
+  enable_interim_phrases: true
+  speech_contexts:  # priority phrases
+    - phrases:
+        - hello
+      boost: 20.0  # 0.0 - 20.0
+
+keyboard:
+  clipboard_delay: 0.05
+  key_interval: 0.01
+  post_hotkey_delay: 0.05
+
+# Path to Google Cloud credentials JSON file
+# Relative to project root or absolute path
+credentials:
+  google_cloud_path: "credentials/my-google-cloud-key.json"  # Use forward slashes for cross-platform compatibility 

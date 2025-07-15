@@ -1,0 +1,14 @@
+# Speech-to-Text Application Configuration
+# Default settings - can be overridden by user.yaml
+
+hotkeys:
+  start_recording: "alt+z"
+  stop_recording: "alt+z"
+  exit_app: "ctrl+alt+f12"
+
+speech:
+  speech_contexts:  # priority phrases
+    - phrases:
+        - exe
+        - vscode
+      boost: 20.0  # 0.0 - 20.0
